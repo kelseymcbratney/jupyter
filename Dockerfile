@@ -11,7 +11,6 @@ git clone https://github.com/onepan/jupyterlab_onedarkpro.git && \
 cd jupyterlab_onedarkpro && \
 jupyter labextension develop . --overwrite && \
 jlpm run build && \
-ln -s / .lsp_symlink && \
 echo "c.Completer.use_jedi = False" >> /etc/ipython/ipython_kernel_config.py
 
 # Install Pyright LSP
