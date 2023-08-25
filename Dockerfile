@@ -6,10 +6,16 @@ RUN pip install --no-cache-dir 'flake8' && \
     fix-permissions "/home/${NB_USER}"
 
 # Install One Dark Theme
-RUN git clone https://github.com/onepan/jupyterlab_onedarkpro.git && \
+RUN cd /tmp/ && \ 
+git clone https://github.com/onepan/jupyterlab_onedarkpro.git && \
 cd jupyterlab_onedarkpro && \
 jupyter labextension develop . --overwrite && \
-jlpm run build
+jlpm run build && \
+ln -s / .lsp_symlink && \
+echo "c.Completer.use_jedi = False" >> /etc/ipython/ipython_kernel_config.py
+
+# Install Pyright LSP
+RUN npm install --save-dev pyright
 
 # Install from the requirements.txt file
 COPY --chown=${NB_UID}:${NB_GID} requirements.txt /tmp/

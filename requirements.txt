@@ -1,2 +1,1 @@
-python-lsp-server[all]
 jupyterlab-lsp
