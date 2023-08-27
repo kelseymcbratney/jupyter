@@ -13,9 +13,6 @@ jupyter labextension develop . --overwrite && \
 jlpm run build && \
 echo "c.Completer.use_jedi = False" >> /etc/ipython/ipython_kernel_config.py
 
-# Install Pyright LSP
-RUN npm install --save-dev pyright
-
 # Install from the requirements.txt file
 COPY --chown=${NB_UID}:${NB_GID} requirements.txt /tmp/
 RUN pip install --no-cache-dir --requirement /tmp/requirements.txt && \
