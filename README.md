@@ -4,4 +4,4 @@
 
 Adds LSP support and One Dark Theme
 
-Built for Local Kubernetes Cluster, Using Flux to Pull into Production
+Built for Local Kubernetes Cluster, Using Flux to Pull into Production.
